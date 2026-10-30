@@ -2722,6 +2722,8 @@ pub fn run() {
                 let mut last_volume = -1.0;
                 let mut last_progress_emit = std::time::Instant::now();
                 let mut last_position = -1.0;
+                let mut last_observed_pos = -1.0;
+                let mut last_pos_advance_at: Option<std::time::Instant> = None;
                 let mut last_duration = -1.0;
                 let mut thumbnail_retries: u32 = 0;
                 let mut seen_notifs = std::collections::HashSet::<u32>::new();
