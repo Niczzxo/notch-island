@@ -178,10 +178,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ appVersion, optLanguage, i
             <span>{isId ? "Dibuat oleh" : "Made by"}</span>
             <button
               type="button"
-              onClick={() => openUrl("https://instagram.com/faizngraha").catch(() => {})}
+              onClick={() => openUrl("https://github.com/Niczzxo").catch(() => {})}
               className={`flex items-center gap-1 font-semibold transition-colors cursor-pointer ${isLightMode ? "text-[#0a84ff] hover:text-[#0070e0]" : "text-[#8db8ff] hover:text-white"}`}
             >
-              Faiz Nugraha (@faizngraha)
+              Md Riyazul Islam (@Niczzxo)
               <ExternalLink size={11} />
             </button>
           </div>
