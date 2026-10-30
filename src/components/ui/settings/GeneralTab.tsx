@@ -1,5 +1,5 @@
 import React from "react";
-import { Globe, Zap, Smile, AppWindow, Timer, User, X } from "lucide-react";
+import { Zap, Smile, AppWindow, Timer, User, X } from "lucide-react";
 import { SettingRow } from "./SettingRow";
 import { IosSwitch } from "../../ios/IosSwitch";
 import { IosSegmentedControl } from "../../ios/IosSegmentedControl";
@@ -8,7 +8,6 @@ import { t, Language } from "../../../services/i18n";
 
 export interface GeneralTabProps {
   optLanguage: Language;
-  onChangeLanguage: (lang: Language) => void;
   isAutostart: boolean;
   onToggleAutostart: () => void;
   showGreeting: boolean;
@@ -37,7 +36,6 @@ export interface GeneralTabProps {
 
 export const GeneralTab: React.FC<GeneralTabProps> = ({
   optLanguage,
-  onChangeLanguage,
   isAutostart,
   onToggleAutostart,
   showGreeting,
@@ -64,26 +62,8 @@ export const GeneralTab: React.FC<GeneralTabProps> = ({
             : "bg-[#111114] border border-white/[0.06] shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
         }`}
       >
-        {/* 1. Bahasa */}
-        <SettingRow
-          icon={<Globe size={18} />}
-          iconBgClass="bg-[#132c1e]"
-          iconColorClass="text-[#34c759]"
-          title={t("settings_language")}
-          subtitle={t("settings_language_desc")}
-          control={
-            <IosSegmentedControl
-              value={optLanguage}
-              onChange={(val) => onChangeLanguage(val as Language)}
-              options={[
-                { value: "en", label: "English" },
-                { value: "id", label: "Indonesia" },
-              ]}
-            />
-          }
-        />
-
-        {/* 2. Mulai bersama Windows */}
+        
+        {/* 1. Mulai bersama Windows */}
         <SettingRow
           icon={<Zap size={18} />}
           iconBgClass="bg-[#2c2410]"
