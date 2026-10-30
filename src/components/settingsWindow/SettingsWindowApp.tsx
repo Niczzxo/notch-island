@@ -1154,7 +1154,7 @@ export const SettingsWindowApp: React.FC = () => {
                     />
                   )}
 
-                  motion.div>
+                </motion.div>
               )}
             </AnimatePresence>
           </div>
