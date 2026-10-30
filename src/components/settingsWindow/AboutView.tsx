@@ -18,6 +18,36 @@ interface ChangelogEntry {
 
 const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "4.2.6",
+    date: "30 Okt 2026",
+    highlights: [
+      {
+        icon: <Zap size={14} />,
+        titleId: "Dukungan & Donasi Dihapus",
+        titleEn: "Support & Donate Removed",
+        descId: "Bagian Dukungan & Donasi (Saweria, SociaBuzz & QRIS) dihapus dari Pengaturan.",
+        descEn: "The Support & Donate section (Saweria, SociaBuzz & QRIS) has been removed from Settings.",
+        badge: "improve",
+      },
+      {
+        icon: <CheckSquare size={14} />,
+        titleId: "Tentang: Pembuat Diperbarui",
+        titleEn: "About: Author Updated",
+        descId: "Info pembuat di halaman Tentang sekarang menampilkan Niczzxo.",
+        descEn: "The author info on the About page now shows Niczzxo.",
+        badge: "improve",
+      },
+      {
+        icon: <MessageSquare size={14} />,
+        titleId: "Hanya Bahasa Inggris",
+        titleEn: "English Only",
+        descId: "Aplikasi sekarang hanya menggunakan Bahasa Inggris; pilihan bahasa lain dihapus.",
+        descEn: "The app now uses English only; all other language options have been removed.",
+        badge: "improve",
+      },
+  ],
+  },
+  {
     version: "4.2.5",
     date: "30 Okt 2026",
     highlights: [
