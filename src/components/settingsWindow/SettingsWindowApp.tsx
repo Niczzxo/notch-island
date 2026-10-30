@@ -50,7 +50,6 @@ import {
   SIDEBAR_SECTIONS,
 } from "./SettingsSidebar";
 import { TabsManagerView } from "./TabsManagerView";
-import { SupportView } from "./SupportView";
 import { AboutView } from "./AboutView";
 import { AppearanceTab } from "../ui/settings/AppearanceTab";
 import { IdleTab } from "../ui/settings/IdleTab";
@@ -1168,13 +1167,7 @@ export const SettingsWindowApp: React.FC = () => {
                     />
                   )}
 
-                  {activeSection === "support" && (
-                    <SupportView
-                      optLanguage={optLanguage}
-                      isLightMode={isLightMode}
-                    />
-                  )}
-                </motion.div>
+                  motion.div>
               )}
             </AnimatePresence>
           </div>
