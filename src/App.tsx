@@ -1838,17 +1838,6 @@ export default function App() {
     }
   }, [isLightMode]);
 
-  const handleChangeLanguage = async (newLang: Language) => {
-    setLanguage(newLang, false);
-    setOptLanguage(newLang);
-    if (store) {
-      try {
-        await store.set("opt_language", newLang);
-        await store.save();
-      } catch {}
-    }
-  };
-
   const handleChangeNotchShape = useCallback(async (shape: "notch" | "island") => {
     if (shape !== notchShape) {
       const offset = islandTopOffset || 10;
@@ -2248,11 +2237,8 @@ export default function App() {
         }
         const ears = await s.get('opt_ears'); if (typeof ears === 'boolean') setOptEars(ears);
         const ac = await s.get('opt_auto_compact'); if (typeof ac === 'boolean') setOptAutoCompact(ac);
-        const lang = await s.get('opt_language');
-        if (lang === 'en' || lang === 'id') {
-          setLanguage(lang as Language, false);
-          setOptLanguage(lang as Language);
-        }
+        setLanguage("en", false);
+        setOptLanguage("en");
         const th = await s.get('opt_theme'); if (th === 'dark' || th === 'light' || th === 'auto') setOptTheme(th);
         const savedLayout = await s.get('opt_idle_layout');
         if (savedLayout) {
@@ -3118,8 +3104,8 @@ export default function App() {
         const { key, value } = payload;
         switch (key) {
           case "opt_language":
-            setLanguage(value as Language, false);
-            setOptLanguage(value as Language);
+            setLanguage("en", false);
+            setOptLanguage("en");
             break;
           case "show_greeting":
             setShowGreeting(Boolean(value));
@@ -5054,7 +5040,6 @@ export default function App() {
                           <SettingsPanel
                             slideDirection={slideDirection}
                             optLanguage={optLanguage}
-                            onChangeLanguage={handleChangeLanguage}
                             optAutoCompact={optAutoCompact}
                             onToggleAutoCompact={async () => {
                               const next = !optAutoCompact;
