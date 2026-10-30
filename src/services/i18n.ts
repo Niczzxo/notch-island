@@ -712,22 +712,14 @@ export const translations = {
 export type TranslationKey = keyof typeof translations;
 
 export function getLanguage(): Language {
-  try {
-    const saved = localStorage.getItem("island_language");
-    if (saved === "en" || saved === "id") return saved;
-  } catch {}
-
-  if (typeof navigator !== "undefined" && navigator.language?.toLowerCase().startsWith("id")) {
-    return "id";
-  }
   return "en";
 }
 
-export function setLanguage(lang: Language, autoReload = false) {
+export function setLanguage(_lang: Language, autoReload = false) {
   try {
-    localStorage.setItem("island_language", lang);
+    localStorage.setItem("island_language", "en");
     if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("island_language_changed", { detail: lang }));
+      window.dispatchEvent(new CustomEvent("island_language_changed", { detail: "en" }));
     }
   } catch {}
 
