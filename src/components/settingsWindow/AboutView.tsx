@@ -18,6 +18,20 @@ interface ChangelogEntry {
 
 const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "4.2.7",
+    date: "31 Okt 2026",
+    highlights: [
+      {
+        icon: <Bug size={14} />,
+        titleId: "Fix: Status Putar Media",
+        titleEn: "Fix: Media Play Status",
+        descId: "Ikon putar/jeda sekarang benar saat Edge/Chrome memutar musik — posisi yang terus berjalan dianggap sedang memutar.",
+        descEn: "The play/pause icon is now correct when Edge/Chrome is playing music — an advancing timeline counts as playing.",
+        badge: "fix",
+      },
+  ],
+  },    
+  {
     version: "4.2.6",
     date: "30 Okt 2026",
     highlights: [
