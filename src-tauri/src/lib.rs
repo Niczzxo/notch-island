@@ -3473,6 +3473,25 @@ pub fn run() {
                                 position_sec = pos;
                                 duration_sec = dur;
                             }
+            // SMTC can lie about the play state: Edge/Chrome sometimes report
+                            // Paused (or Play-enabled / Pause-disabled) while the media is
+                            // actually playing. The timeline position cannot lie — if it keeps
+                            // advancing between ticks, the media is really playing.
+                            let now_tick = std::time::Instant::now();
+                            if position_sec > last_observed_pos + 0.05 {
+                                last_pos_advance_at = Some(now_tick);
+                            } else if position_sec < last_observed_pos - 1.0 {
+                                // Track changed or seeked backwards: forget past advances.
+                                last_pos_advance_at = None;
+                            }
+                            if !title.is_empty() {
+                                if let Some(advance_at) = last_pos_advance_at {
+                                    if now_tick.duration_since(advance_at).as_secs_f64() < 2.0 {
+                                        is_playing = true;
+                                    }
+                                }
+                            }
+                            last_observed_pos = position_sec;
                             
                             // If thumbnail was freshly read or found in cache, preserve it
                             let cache_key = format!("{} - {}", artist.trim().to_lowercase(), title.trim().to_lowercase());
