@@ -1,6 +1,6 @@
 [package]
 name = "gili"
-version = "4.2.6"
+version = "4.2.7"
 description = "Gili Island for Windows"
 authors = ["Faiz Anak Telkom University"]
 edition = "2021"
