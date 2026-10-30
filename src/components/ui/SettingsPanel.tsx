@@ -20,7 +20,6 @@ export interface SettingsPanelProps {
   slideDirection: number;
   // General
   optLanguage: Language;
-  onChangeLanguage: (lang: Language) => void;
   optAutoCompact: boolean;
   onToggleAutoCompact: () => void;
   isAutostart: boolean;
