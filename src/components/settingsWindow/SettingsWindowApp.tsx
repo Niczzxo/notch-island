@@ -327,12 +327,8 @@ export const SettingsWindowApp: React.FC = () => {
         const ac = await s.get("opt_auto_compact");
         if (typeof ac === "boolean") setOptAutoCompact(ac);
 
-        const lang = await s.get("opt_language");
-        if (lang === "en" || lang === "id") {
-          setLanguage(lang, false);
-          setOptLanguage(lang);
-        }
-
+        setLanguage("en", false);
+        setOptLanguage("en");
         const th = await s.get("opt_theme");
         if (th === "dark" || th === "light" || th === "auto") setOptTheme(th);
 
@@ -390,8 +386,8 @@ export const SettingsWindowApp: React.FC = () => {
         const { key, value } = payload;
         switch (key) {
           case "opt_language":
-            setLanguage(value as Language, false);
-            setOptLanguage(value as Language);
+            setLanguage("en", false);
+            setOptLanguage("en");
             break;
           case "opt_theme":
             setOptTheme(value);
@@ -451,13 +447,6 @@ export const SettingsWindowApp: React.FC = () => {
   const handleChangeTabsPrefs = async (next: NotchTabsPreferences) => {
     setTabsPrefs(next);
     await saveTabsPreferences(next, true);
-  };
-
-  const handleChangeLanguage = async (lang: Language) => {
-    setLanguage(lang);
-    setOptLanguage(lang);
-    if (store) await store.set("opt_language", lang);
-    broadcastSetting("opt_language", lang);
   };
 
   const handleToggleAutostart = async () => {
@@ -900,7 +889,6 @@ export const SettingsWindowApp: React.FC = () => {
                       else if (subtab === "advanced") setActiveSection("system");
                     }}
                     optLanguage={optLanguage}
-                    onChangeLanguage={handleChangeLanguage}
                     isAutostart={isAutostart}
                     onToggleAutostart={handleToggleAutostart}
                     showGreeting={showGreeting}
@@ -1018,7 +1006,6 @@ export const SettingsWindowApp: React.FC = () => {
                   {activeSection === "general" && (
                     <GeneralTab
                       optLanguage={optLanguage}
-                      onChangeLanguage={handleChangeLanguage}
                       isAutostart={isAutostart}
                       onToggleAutostart={handleToggleAutostart}
                       showGreeting={showGreeting}
