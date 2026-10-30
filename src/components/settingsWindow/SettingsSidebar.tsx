@@ -7,7 +7,6 @@ import {
   Bell,
   Keyboard,
   ShieldCheck,
-  Heart,
   Search,
   X,
   Info,
@@ -22,8 +21,7 @@ export type SettingsWindowSection =
   | "idle"
   | "notifications"
   | "shortcuts"
-  | "system"
-  | "support";
+  | "system";
 
 interface SettingsSidebarProps {
   activeSection: SettingsWindowSection;
@@ -119,15 +117,6 @@ export const SIDEBAR_SECTIONS: SidebarItemMeta[] = [
     subEn: "Updates, cache & reset",
     icon: <ShieldCheck size={15} strokeWidth={2.2} />,
     bgClass: "bg-[#32ade6]",
-  },
-  {
-    id: "support",
-    labelId: "Dukungan (Support)",
-    labelEn: "Support & Donate",
-    subId: "Saweria, SociaBuzz & QRIS",
-    subEn: "Saweria, SociaBuzz & QRIS",
-    icon: <Heart size={15} strokeWidth={2.2} />,
-    bgClass: "bg-[#ff2d55]",
   },
 ];
 
