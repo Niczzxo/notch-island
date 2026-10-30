@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Globe,
   Zap,
   Smile,
   AppWindow,
@@ -44,7 +43,6 @@ export interface SearchResultsProps {
   onNavigateTab: (tab: SettingsSubtab) => void;
   // General props
   optLanguage: Language;
-  onChangeLanguage: (lang: Language) => void;
   isAutostart: boolean;
   onToggleAutostart: () => void;
   showGreeting: boolean;
@@ -129,7 +127,6 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   searchQuery,
   onNavigateTab,
   optLanguage,
-  onChangeLanguage,
   isAutostart,
   onToggleAutostart,
   showGreeting,
@@ -256,27 +253,6 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   // Registry of all searchable settings
   const items: SearchableItem[] = [
     // 1. General
-    {
-      id: "language",
-      tab: "general",
-      tabLabel: t("settings_subtab_general"),
-      title: t("settings_language"),
-      subtitle: t("settings_language_desc"),
-      keywords: ["language", "bahasa", "indonesia", "english", "id", "en", "interface"],
-      icon: <Globe size={18} />,
-      iconBgClass: "bg-[#132c1e]",
-      iconColorClass: "text-[#34c759]",
-      control: (
-        <IosSegmentedControl
-          value={optLanguage}
-          onChange={(val) => onChangeLanguage(val as Language)}
-          options={[
-            { value: "id", label: "Indonesia" },
-            { value: "en", label: "English" },
-          ]}
-        />
-      ),
-    },
     {
       id: "autostart",
       tab: "general",
