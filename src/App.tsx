@@ -3213,7 +3213,7 @@ export default function App() {
       } else if (act === "test_notification") {
         const isId = getLanguage() === "id";
         showNotif({
-          title: isId ? "Dukung Pengembang · Gili" : "Support Developer · Gili",
+          title: isId ? "Notifikasi Tes · Gili" : "Test Notification · Gili",
           body: isId
             ? "Notifikasi percobaan dari Jendela Pengaturan Gili berjalan lancar! ✨"
             : "Test notification from Gili Settings Window is working smoothly! ✨",
@@ -5128,53 +5128,53 @@ export default function App() {
                                 const samples: NotifPayload[] = isId
                                   ? [
                                       {
-                                        title: "Dukung Pengembang · Gili",
-                                        body: "Jangan lupa support dev yaa! Traktir kopi biar makin semangat update fitur keren ☕",
-                                        subtitle: "Traktir Dev Kopi ☕",
-                                        headline: "Suka pakai Gili Island?",
-                                        secondaryText: "Dukungan dan secangkir kopi darimu sangat berarti untuk kelanjutan projek ini! ❤️",
+                                        title: "Notifikasi Tes · Gili",
+                                        body: "Ini contoh notifikasi dari Gili. Semua berjalan lancar! ✨",
+                                        subtitle: "Tes Notifikasi",
+                                        headline: "Notifikasi Berfungsi",
+                                        secondaryText: "Notifikasi Gili berfungsi dengan baik. Terima kasih sudah menggunakan Gili Island!",
                                         icon: "coffee",
                                       },
                                       {
-                                        title: "Support Developer · Gili",
-                                        body: "Yuk dukung dev dengan traktir secangkir kopi! Bikin coding malam-malam makin kenceng 🚀",
-                                        subtitle: "Beliin Dev Kopi ☕",
-                                        headline: "Traktir Dev Kopi",
-                                        secondaryText: "Terima kasih banyak sudah menggunakan dan mendukung Gili Island!",
+                                        title: "Notifikasi Tes · Gili",
+                                        body: "Notifikasi percobaan kedua. Suara, tampilan, dan durasi bisa diatur di Pengaturan.",
+                                        subtitle: "Tes Notifikasi",
+                                        headline: "Uji Notifikasi",
+                                        secondaryText: "Terima kasih sudah menggunakan Gili Island!",
                                         icon: "coffee",
                                       },
                                       {
-                                        title: "Traktir Kopi Dev ☕",
-                                        body: "Hai! Kalau kamu suka Gili, jangan lupa traktir dev kopi ya. Bikin hari dev makin cerah ✨",
-                                        subtitle: "Support Dev · Gili Island",
-                                        headline: "Yuk Traktir Dev Kopi!",
-                                        secondaryText: "Setiap cangkir kopi bikin dev makin rajin nambahin fitur dan perbaiki bug!",
+                                        title: "Notifikasi Tes · Gili",
+                                        body: "Hai! Ini notifikasi percobaan dari Gili. Semuanya berjalan dengan baik ✨",
+                                        subtitle: "Tes Notifikasi · Gili Island",
+                                        headline: "Notifikasi Berhasil!",
+                                        secondaryText: "Notifikasi tampil dengan benar dan siap digunakan!",
                                         icon: "heart",
                                       },
                                     ]
                                   : [
                                       {
-                                        title: "Support Developer · Gili",
-                                        body: "Don't forget to support the dev! Buy a coffee to keep awesome new updates coming ☕",
-                                        subtitle: "Buy Dev a Coffee ☕",
-                                        headline: "Enjoying Gili Island?",
-                                        secondaryText: "Your support and a cup of coffee mean a lot to keep this project going! ❤️",
+                                        title: "Test Notification · Gili",
+                                        body: "This is a sample notification from Gili. Everything is working smoothly! ✨",
+                                        subtitle: "Test Notification",
+                                        headline: "Notifications Working",
+                                        secondaryText: "Gili notifications are working properly. Thanks for using Gili Island!",
                                         icon: "coffee",
                                       },
                                       {
-                                        title: "Support Developer · Gili",
-                                        body: "Support the dev with a cup of coffee! Keeps late-night coding sessions fueled 🚀",
-                                        subtitle: "Buy Dev a Coffee ☕",
-                                        headline: "Treat Dev to Coffee",
-                                        secondaryText: "Thank you so much for using and supporting Gili Island!",
+                                        title: "Test Notification · Gili",
+                                        body: "Second test notification. Sound, appearance, and duration can be changed in Settings.",
+                                        subtitle: "Test Notification",
+                                        headline: "Notification Test",
+                                        secondaryText: "Thank you so much for using Gili Island!",
                                         icon: "coffee",
                                       },
                                       {
-                                        title: "Treat Dev to Coffee ☕",
-                                        body: "Hey! If you enjoy Gili, consider treating the dev to coffee. It truly brightens my day ✨",
-                                        subtitle: "Support Dev · Gili Island",
-                                        headline: "Buy Dev a Coffee!",
-                                        secondaryText: "Every cup of coffee helps fuel new features and swift bug fixes!",
+                                        title: "Test Notification · Gili",
+                                        body: "Hey! This is a test notification from Gili. Everything is working well ✨",
+                                        subtitle: "Test Notification · Gili Island",
+                                        headline: "Notification Works!",
+                                        secondaryText: "Notifications show correctly and are ready to use!",
                                         icon: "heart",
                                       },
                                     ];
